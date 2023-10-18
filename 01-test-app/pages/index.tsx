@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import styles from "@/components/layouts/MainLayout.module.css";
 import Link from "next/link";
 import { MainLayout } from "@/components/layouts/MainLayout";
+import { LightLayout } from "@/components/layouts/LightLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function HomePage() {
   return (
-    <MainLayout>
+    <>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -80,6 +81,15 @@ export default function HomePage() {
           </p>
         </a>
       </div>
-    </MainLayout>
+    </>
   );
 }
+
+
+HomePage.getLayout = function getLayout(page: JSX.Element) {
+  return (
+    <MainLayout>
+      {page}
+    </MainLayout>
+  );
+};
