@@ -83,10 +83,11 @@ export default function AboutPage() {
     </>
   );
 }
-
+//ReactElement o JSX.Element, las 2 estan bien
 //Para aplicar layouts en diferentes paginas, debemos hacer esta configuracion (por pagina) y otra en el _app.tsx (usando pages router) ver docs
 //Puedo aplicar esto en el proyecto de Vado
-AboutPage.getLayout = function getLayout(page: ReactElement) {
+AboutPage.getLayout = function getLayout(page: JSX.Element) {
+  // AboutPage.getLayout = function getLayout(page: ReactElement) {
   return (
     <MainLayout>
       <LightLayout>{page}</LightLayout>
